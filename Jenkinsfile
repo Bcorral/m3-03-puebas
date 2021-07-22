@@ -26,5 +26,12 @@ pipeline {
                 }
             }
         }
+        stage('Sonar'){
+        	steps{
+        	sh 'mvn verify sonar:sonar -Dsonar.projectKey=Bcorral_m3-03-puebas -Dsonar.organization=bcorral -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=462188e22cd55e26eb5df4aca84bddadbeb20192 -Dsonar.branch.name=master'
+        	
+        	}
+        	
+        }
     }
 }
